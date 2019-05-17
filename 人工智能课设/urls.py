@@ -19,9 +19,6 @@ from AI_project import views
 urlpatterns = [
     url(r'admin/', admin.site.urls),
     url(r'index/',views.index),
-    url(r'contrast/',views.contrast),
-    url(r'brightness/',views.brightness),
-    url(r'filtering/',views.filtering),
-    url(r'saturation/',views.saturation),
+    url(r'bp_pyx/',views.bp_pyx),
 
 ]

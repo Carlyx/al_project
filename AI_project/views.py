@@ -9,21 +9,6 @@ def index(request):
     return render(request, 'index.html')
 
 
-def contrast(request):
+def bp_pyx(request):
     pass
-    return render(request, 'contrast.html')
-
-
-def brightness(request):
-    pass
-    return render(request, 'brightness.html')
-
-
-def filtering(request):
-    pass
-    return render(request, 'filtering.html')
-
-
-def saturation(request):
-    pass
-    return render(request, 'saturation.html')
+    return render(request,'pyx.html')
