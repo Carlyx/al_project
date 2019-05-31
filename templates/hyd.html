@@ -1,0 +1,28 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}ContrastControl{% endblock %}
+{% block content %}
+<div style="display: inline">
+    <div style="display: inline;width: 500px;height: 500px;color: dodgerblue">
+    <h1 style="font-size: 60px">知识库：</h1>
+    {% for i in  knowledge %}
+        {% for j in i %}
+            <i1>{{ j }} </i1>
+        {% endfor %}<br>
+    {% endfor %}
+    </div>
+    <div style="display: inline;width: 300px;height: 700px">
+    <h1 style="font-size: 50px; color: #2d2e33" >输入事实/知识库：</h1>
+    <form action='/exper/' method='post'>{%csrf_token%}
+        <textarea style="width: 600px;height: 400px" name="input" type="text"></textarea>
+        <div>
+        <br>
+        <button type="submit" name="Forward"style="width: 100px;height: 50px" value="Forward">正向推理</button>
+        <button type="submit" name="Backward"style="width: 100px;height: 50px" value="Backward">反向推理</button>
+        <button type="submit" name="change"style="width: 100px;height: 50px" value="change">修改知识库</button>
+    </div>
+    </form>
+    </div>
+</div>
+
+{% endblock %}

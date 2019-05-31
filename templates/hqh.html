@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block title %}ContrastControl{% endblock %}
 {% block content %}
-        <form action="/bp_pyx/" method="post">
+        <form action="/bp_hqh/" method="post">
 {#            <div class="container-fluid" id="container" style="height: 20%">#}
 	    <div class="row-fluid">
 		    <div  style="float:left" >
@@ -35,8 +35,7 @@
                         <div class="controls">
                             <select class="input-xlarge" name="func">
                               <option value="1">sin(x)</option>
-                                <option value="2">x^2+x^3</option>
-                              <option value="3">sin(x)+cos(x)</option>
+                              <option value="3">sin(x1)+cos(x2)</option>
                               <option value="4">x^2</option>
                             </select>
                         </div>
@@ -48,6 +47,7 @@
                             <select class="input-xlarge" name="act">
                               <option value="1">sigmoid</option>
                               <option value="2">relu</option>
+{#                                <option value="3">tahn</option>#}
 {#                              <option value="3">sin(x)+cos(y)</option>#}
                             </select>
                         </div>
@@ -65,12 +65,10 @@
             </form>
         </form>
     <h1></h1>
-	<div  id="jj" style="float: left; width: 25%; margin: 0px 0px 0px 0px;">
+	<div  id="jj">
 
 	</div>
-    <div id="insert" style="float: right; width: 25%; margin: 0px 300px 0px 0px;" >
-
-    </div>
+    <div id="insert"> sdasd</div>
 
 
 {#<script src="../static/js/dist/echarts.min.js"></script>#}
@@ -83,7 +81,7 @@
        var data = {'hid_num': document.getElementById('in1').value, 'hid_lay': document.getElementById('in2').value, 'funcc': document.getElementById('func').value, 'actc': document.getElementById('act').value, 'bs':document.getElementById('in3').value, 'lr':document.getElementById('in4').value};
        {#console.log(data);#}
        $.ajax({
-           url: '/bp_pyx/',
+           url: '/bp_hqh/',
            type: 'GET',
            data: data,
            traditional: true,
@@ -99,31 +97,24 @@
        var p = ++ii;
        console.log(p);
        $.ajax({
-           url: '/bp_pyx/',
+           url: '/bp_hqh/',
            type: 'GET',
            data: 's',
            traditional: true,
            dataType: 'JSON',
            success: function (arg) {
-               {#console.log(arg["va"]);#}
-               {#alert(arg["url"]);#}
-               {#var getImg=document.getElementsByTagName("img");#}
+
                var inpp = document.getElementById('insert');
                var ls = document.getElementById('jj');
-               var dat = arg["url"];
-               var lss = arg["los"];
+               var dat = arg["url"]
+
                var str="";
-               var str1="";
-               for(var i=0; i<Object.keys(lss).length;i++){
-                   console.log(lss[i]);
-                   str+='<img src=' + lss[i] + '/>';
-               }
-               ls.innerHTML = str;
+
                for(var i=0; i<Object.keys(dat).length;i++){
                    console.log(dat[i]);
-                   str1+='<img src=' + dat[i] + '/>';
+                   str+='<img src=' + dat[i] + '/>'
                }
-               inpp.innerHTML = str1;
+               inpp.innerHTML = str;
            }
         }
         );

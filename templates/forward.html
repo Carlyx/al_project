@@ -1,0 +1,13 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}ContrastControl{% endblock %}
+{% block content %}
+<div style="display: inline">
+    <h1 style="font-size: 50px ;color: dodgerblue">推理过程：</h1>
+    {% for i in ans %}
+    <i1 style="color: #2d2e33; font-size: 40px">{{ i }}</i1><br>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

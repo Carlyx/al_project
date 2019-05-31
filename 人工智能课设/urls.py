@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.urls import path
 from AI_project import views
 urlpatterns = [
-    url(r'admin/', admin.site.urls),
-    url(r'index/',views.index),
-    url(r'bp_pyx/',views.bp_pyx),
+    path('admin/', admin.site.urls),
+    path('index/',views.index),
+    path('bp_pyx/', views.bp_pyx),
+    path('bp_hqh/', views.bp_hqh),
+    path('exper/', views.exper),
+    path('hyd/', views.hyd),
+
+
 
 ]
